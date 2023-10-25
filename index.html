@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Simple ?Calculator</title>
+    <style>
+        /* Add CSS styles to create border lines */
+        .bordered-element {
+            width: 170px;
+            height: 60px;
+            border: 2px solid black;
+            padding: 0.5%;
+        }
+    </style>
+</head>
+<body>
+    <h1>?Calculator</h1>
+    <h3>Residential</h3>
+    <div class="bordered-element">
+        <form>
+            <input type="number" id="res_prev" placeholder="Enter previous reading">
+            <input type="number" id="res_curr" placeholder="Enter current reading">
+            <input type="number" id="res_bill" placeholder="Enter Total bill">
+        </form>
+    </div>
+    <br></br>
+    <h3>Commercial</h3>
+    <div class="bordered-element">
+        <form>
+            <input type="number" id="comm_prev" placeholder="Enter previous reading">
+            <input type="number" id="comm_curr" placeholder="Enter current reading">
+    
+            <input type="button" value="Calculate Bill" onclick="calculate()">
+        </form>
+    </div> 
+        <p id="result"></p>
+      
+
+
+
+    <script>
+        function calculate() {
+            var res_prev = parseFloat(document.getElementById("res_prev").value);
+            var res_curr = parseFloat(document.getElementById("res_curr").value);
+            var res_bill = parseFloat(document.getElementById("res_bill").value);
+            var comm_prev = parseFloat(document.getElementById("comm_prev").value);
+            var comm_curr = parseFloat(document.getElementById("comm_curr").value);
+
+            // =(H6/(G6-F6)+1.25)*(J6-I6)
+            var comm_bill = (res_bill/ (res_curr- res_prev)+1.25)*(comm_curr-comm_prev);
+            document.getElementById("result").innerHTML = "Bill: " + comm_bill;
+        }
+    </script>
+</body>
+</html>
