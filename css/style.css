@@ -103,7 +103,7 @@ a:hover {
 /* background image settings for video section */
 
 .video-container {
-    background-image: url("../images/video-header.png");
+    background-image: url("../img/bg_2.jpg");
     background-repeat: no-repeat;
     background-size: cover;
 }
@@ -111,7 +111,7 @@ a:hover {
 /* background color setting */
 
 .gallery-container {
-    background-image: url("../images/monkees.jpg");
+    background-image: url("../img/bg_3.jpg");
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -221,7 +221,7 @@ a:hover {
 /* font settings for the music service links in jumbotron */
 
 .lead.music-service {
-    font-size: 18px;
+    font-size: 18px;images
     padding-left: 10px;
     padding-right: 10px;
     font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
