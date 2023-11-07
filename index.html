@@ -301,6 +301,92 @@
             <!-- /.video -->
         </div>
     </div>
+    <head>
+        <title>Simple ?Calculator</title>
+    
+        <style>
+            body {
+                /* Add CSS styles to create border lines */
+                .bordered-element {
+                    /* width: 170px;
+                    height: 60px; */
+                    margin: 0 auto;
+                    max-width: 400px;
+    
+                    border: 2px solid black;
+                    padding: 0.5%;
+                }
+                form {
+                    max-width: 400px;
+                    margin: 0 auto;
+                    padding: 20px;
+                    background-color: white;
+                    border: 1px solid #ddd;
+                    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+                }
+                input[type="number"] {
+                    width: 100%;
+                    padding: 10px;
+                    margin-bottom: 10px;
+                }
+                input[type="button"] {
+                    background-color: #007bff;
+                    color: white;
+                    border: none;
+                    padding: 10px 20px;
+                    cursor: pointer;
+                }
+                input[type="button"]:hover {
+                    background-color: #0056b3;
+                }
+                p#result {
+                    font-weight: bold;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <h1>?Calculator</h1>
+        
+        <div class="bordered-element">
+            <h3>Residential</h3>
+            <form>
+                <input type="number" id="res_prev" placeholder="Enter previous reading">
+                <input type="number" id="res_curr" placeholder="Enter current reading">
+                <input type="number" id="res_bill" placeholder="Enter Total bill">
+            </form>
+        </div>
+        <br></br>
+       
+        <div class="bordered-element">
+            <h3>Commercial</h3>
+            <form>
+                <input type="number" id="comm_prev" placeholder="Enter previous reading">
+                <input type="number" id="comm_curr" placeholder="Enter current reading">
+        
+                <input type="button" value="Calculate Bill" onclick="calculate()">
+            </form>
+        </div> 
+            <p id="result"></p>
+          
+    
+    
+    
+        <script>
+            function calculate() {
+                var res_prev = parseFloat(document.getElementById("res_prev").value);
+                var res_curr = parseFloat(document.getElementById("res_curr").value);
+                var res_bill = parseFloat(document.getElementById("res_bill").value);
+                var comm_prev = parseFloat(document.getElementById("comm_prev").value);
+                var comm_curr = parseFloat(document.getElementById("comm_curr").value);
+    
+                // =(H6/(G6-F6)+1.25)*(J6-I6)
+                var comm_bill = (res_bill/ (res_curr- res_prev)+1.25)*(comm_curr-comm_prev);
+                document.getElementById("result").innerHTML = "Bill: " + comm_bill;
+            }
+        </script>
+    </body>
+    
     <div class="container-wrapper social-container">
         <footer>
             <div class="container-fluid content-container ">
